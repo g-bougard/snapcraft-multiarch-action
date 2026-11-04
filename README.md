@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: canonical/snapcraft-multiarch-action@v1
+    - uses: actions/checkout@v7
+    - uses: g-bougard/snapcraft-multiarch-action@v1
 ```
 
 This will run `snapcraft` using the [snapcraft-container](ghcr.io/canonical/snapcraft-container:core24)
@@ -25,7 +25,7 @@ the workflow:
 
 ```yaml
 ...
-    - uses: canonical/snapcraft-multiarch-action@v1
+    - uses: g-bougard/snapcraft-multiarch-action@v1
       id: snapcraft
     - uses: actions/upload-artifact@v4
       with:
@@ -63,13 +63,13 @@ jobs:
         - arm64
         - riscv64 # Note: only core24 and core22 support riscv64
     steps:
-    - uses: actions/checkout@v4
-    - uses: docker/setup-qemu-action@v3
+    - uses: actions/checkout@v7
+    - uses: docker/setup-qemu-action@v4
       with:
         # see https://github.com/tonistiigi/binfmt/issues/215
         # also see: https://bugs.launchpad.net/ubuntu/+source/qemu/+bug/2096782
         image: 'tonistiigi/binfmt:master'
-    - uses: canonical/snapcraft-multiarch-action@v1
+    - uses: g-bougard/snapcraft-multiarch-action@v1
       with:
         architecture: ${{ matrix.platform }}
 ```
@@ -84,7 +84,7 @@ parameter:
 
 ```yaml
 ...
-    - uses: canonical/snapcraft-multiarch-action@v1
+    - uses: g-bougard/snapcraft-multiarch-action@v1
       with:
         path: path-to-snapcraft-project
 ```

@@ -9,7 +9,7 @@ jobs:
   unit: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v7
     - name: Install crun
       uses: ./.github/actions/fix-crun
       with:
@@ -51,8 +51,8 @@ jobs:
             runner: ubuntu-latest
     runs-on: ${{ matrix.runner }}
     steps:
-    - uses: docker/setup-qemu-action@v3
-    - uses: actions/checkout@v4
+    - uses: docker/setup-qemu-action@v4
+    - uses: actions/checkout@v7
     - name: Install crun
       uses: ./.github/actions/fix-crun
       with:
