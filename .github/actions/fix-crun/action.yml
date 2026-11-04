@@ -19,7 +19,7 @@ runs:
     - name: patch crun
       shell: bash
       env:
-        URI: https://github.com/containers/crun/releases/download/1.14.4/crun-1.14.4-linux-amd64
+        URI: https://github.com/containers/crun/releases/download/1.30.1/crun-1.30.1-linux-amd64
         CHECKSUMS: ${{ inputs.checksums }}
       run: |
         cd $(dirname "$CHECKSUMS")
