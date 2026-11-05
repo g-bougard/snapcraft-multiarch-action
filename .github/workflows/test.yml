@@ -34,15 +34,6 @@ jobs:
         runner:
           - ubuntu-latest
         include:
-          - base: core
-            arch: armhf
-            runner: ["self-hosted", "focal"]
-          - base: core
-            arch: arm64
-            runner: ["self-hosted", "focal"]
-          - base: core
-            arch: amd64
-            runner: ["self-hosted", "focal"]
           - base: core22
             arch: riscv64
             runner: ubuntu-latest
